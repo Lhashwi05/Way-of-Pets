@@ -1,5 +1,4 @@
 # Way-of-Pets
-Project to submit for my hackathon at Wayne State University, WayneHacks 2025.
 
 Project Information: This project will serve as a database for a person's pets. They can store information about  their pet, scheduling in the calendar, tracking medicine, taking notes on their pet and learning about how to take care of their pet. Future services are for it to be for doctors and caretakers of a pet to communicate about health needs by updating schedules, along with important medicine information. Similar to a health portal for humans, but more collaborative and for animals.
 
