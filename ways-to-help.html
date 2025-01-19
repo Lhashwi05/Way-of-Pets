@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ways to Help A Buddy</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Cambria, Didot;
+      margin: 0;
+      padding: 0;
+      background-color: #e0f7fa; /* Light cyan background */
+    }
+
+    header {
+      text-align: center;
+      margin: 20px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #0288d1; /* Blue color for title */
+    }
+
+    .pyramid-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .button-row {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .large-button {
+      padding: 50px 50px;
+      font-size: 2em;
+      color: white;
+      border: 5px solid #0288d1; /* Blue border around the button */
+      border-radius: 8px;
+      cursor: pointer;
+      width: 300px;
+      height: 150px;
+      text-align: center;
+      position: relative; /* Allow positioning of text background */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-size: 60% auto; /* Scale the background image to 60% of the button width */
+      background-position: center; /* Center the background image */
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    /* Apply a semi-transparent background color behind the text */
+    .large-button span {
+      background-color: rgba(2, 71, 47, 0.6); /* Semi-transparent black background */
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    /* Button for Pet Care YAY*/
+    .pet-care {
+      background-image: url('https://us-east.storage.cloudconvert.com/tasks/f2c4f733-361d-4108-aa69-5b352470d930/Screenshot%202025-01-18%20162859.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cloudconvert-production%2F20250119%2Fva%2Fs3%2Faws4_request&X-Amz-Date=20250119T153304Z&X-Amz-Expires=86400&X-Amz-Signature=79c18329bfa24306ce30a4cc3a5cb4793de5650641b7f7e1d409b056aeae2715&X-Amz-SignedHeaders=host&response-content-disposition=inline%3B%20filename%3D%22Screenshot%202025-01-18%20162859.jpg%22&response-content-type=image%2Fjpeg&x-id=GetObject'); 
+    }
+
+    /* Button for Tracking Medicine */
+    .track-health {
+      background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAza1s5KePAbJqZ-OEeYFFzsntwSt_bgYUNw&s'); 
+    }
+
+    /* Button for Calendar */
+    .calendar {
+      background-image: url('https://us-east.storage.cloudconvert.com/tasks/c8f3ef39-4656-4285-9503-ca85fd9dc23e/Screenshot%202025-01-18%20163048.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cloudconvert-production%2F20250119%2Fva%2Fs3%2Faws4_request&X-Amz-Date=20250119T153520Z&X-Amz-Expires=86400&X-Amz-Signature=de4bdbc6a1e9639034de186c06d61f650266dd7fad1eafaaeb25d742f1c67f48&X-Amz-SignedHeaders=host&response-content-disposition=inline%3B%20filename%3D%22Screenshot%202025-01-18%20163048.jpg%22&response-content-type=image%2Fjpeg&x-id=GetObject'); 
+    }
+
+    .large-button:hover {
+      background-color: rgba(1, 87, 155, 0.8); /* Darker blue with transparency on hover */
+      border-color: #01579b; /* Darker border color on hover */
+    }
+
+    .go-back-btn {
+      padding: 10px 20px; /* Increased padding for a bigger button */
+      background-color: #388e3c; /* Green background */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 18px; /* Larger font size for the button text */
+      width: auto; /* Allow the button to shrink to fit the content */
+      position: fixed; /* Fix button position */
+      top: 10px; /* 10px from the top */
+      left: 10px; /* 10px from the left */
+      z-index: 10; /* Ensure the button is on top */
+    }
+
+    .go-back-btn:hover {
+      background-color: #2c6b31; /* Darker green on hover */
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ways to Help A Buddy</h1>
+  </header>
+
+  <div class="pyramid-container">
+    <div class="button-row">
+        <button class="large-button pet-care" onclick="window.location.href='pet-care.html'"><span>Pet Care</span></button>
+    </div>
+    <div class="button-row">
+        <button class="large-button track-health" onclick="window.location.href='medicine-tracker.html'"><span>Track Medicine</span></button>
+        <button class="large-button calendar" onclick="window.location.href='calendar.html'"><span>Calendar</span></button>
+    </div>
+  </div>
+
+</body>
+</html>

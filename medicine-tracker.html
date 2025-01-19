@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medicine and Health Tracker</title>
+  <style>
+    body {
+      font-family: Cambria, Didot; /*go back to this and pick best professional one*/
+      margin: 0;
+      padding: 0;
+      background-color: #f3f4f6; /* Light gray background */
+    }
+
+    header {
+      text-align: center;
+      margin-top: 20px;
+      color: #1e4d2b; /* Dark green for the header */
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #1e4d2b;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+    /* Go Back Button */
+    .go-back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 10px 20px;
+      background-color: #388e3c;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .go-back-btn:hover {
+      background-color: #015f91;
+    }
+
+    /* Medical Notes Section (Left) */
+    .notes-section {
+      width: 45%;
+      background-color: #ffffff;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    .notes-section h2 {
+      color: #0288d1; /* Blue for the section header */
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+
+    .notes-section textarea {
+      width: 96.5%;
+      height: 1000px;
+      padding: 10px;
+      border: 1px solid #0288d1;
+      border-radius: 5px;
+      font-size: 16px;
+      background-color: #f1f8ff; /* Light blue background for the textarea */
+      resize: none;
+    }
+
+    /* Tracker Section (Right) */
+    .tracker-section {
+      width: 45%;
+      background-color: #ffffff;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    .tracker-section h2 {
+      color: #0288d1; /* Blue for the section header */
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+
+    /* Input Fields */
+    .tracker-section input,
+    .tracker-section select {
+      width: 97%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #0288d1;
+      font-size: 16px;
+    }
+
+    .tracker-section label {
+      font-size: 1.1em;
+      color: #0288d1;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    /* Days Header */
+    .days-header {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr); /* Updated to 7 columns for all days */
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .day-name {
+      font-weight: bold;
+      color: #0288d1;
+    }
+
+    /* Weeks and Checkboxes */
+    .week {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .week-label {
+      width: 80px;
+      font-size: 1.2em;
+      color: #0288d1;
+    }
+
+    /* New structure for the checkbox columns to align under the days */
+    .checkbox-column {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr); /* Adjusted to 7 columns */
+      gap: 10px;
+      width: 100%;
+    }
+
+    .checkbox-column input[type="checkbox"] {
+      transform: scale(1.2);
+      margin: 0;
+      cursor: pointer;
+    }
+
+    /* Hover effect for the checkbox columns */
+    .checkbox-column input[type="checkbox"]:hover {
+      background-color: #0288d1;
+      border-radius: 5px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Go Back Button -->
+  <button class="go-back-btn" onclick="window.history.back();">Go Back</button>
+
+  <header>
+    <h1>Medicine and Health Tracker</h1>
+  </header>
+
+  <div class="container">
+    <!-- Medical Notes Section (Left) -->
+    <div class="notes-section">
+      <h2>Medical Notes</h2>
+      <textarea placeholder="Write your medical notes here..."></textarea>
+    </div>
+
+    <!-- Tracker Section (Right) -->
+    <div class="tracker-section">
+      <h2>Track Medicine</h2>
+
+      <!-- Type of Medicine Input -->
+      <label for="medicine-type">Type of Medicine:</label>
+      <input type="text" id="medicine-type" name="medicine-type" placeholder="Enter type of medicine" required>
+
+      <!-- Medicine Name Input -->
+      <label for="medicine-name">Medicine Name:</label>
+      <input type="text" id="medicine-name" name="medicine-name" placeholder="Enter medicine name" required>
+
+      <!-- Dosage Input -->
+      <label for="dosage">Dosage:</label>
+      <input type="text" id="dosage" name="dosage" placeholder="Enter dosage" required>
+
+      <!-- Frequency Input -->
+      <label for="frequency">Frequency:</label>
+      <select id="frequency" name="frequency" required>
+        <option value="once-daily">Once Daily</option>
+        <option value="twice-daily">Twice Daily</option>
+        <option value="thrice-daily">Thrice Daily</option>
+        <option value="as-needed">As Needed</option>
+      </select>
+
+      <!-- Time of Day Input -->
+      <label for="time">Time of Day:</label>
+      <select id="time" name="time" required>
+        <option value="morning">Morning</option>
+        <option value="afternoon">Afternoon</option>
+        <option value="evening">Evening</option>
+      </select>
+
+      <!-- Reminder Input -->
+      <label for="reminder">Set Reminder:</label>
+      <input type="time" id="reminder" name="reminder" required>
+
+      <!-- Days of the Week Header -->
+      <div class="days-header">
+        <div class="day-name">Monday</div>
+        <div class="day-name">Tuesday</div>
+        <div class="day-name">Wednesday</div>
+        <div class="day-name">Thursday</div>
+        <div class="day-name">Friday</div>
+        <div class="day-name">Saturday</div> <!-- Added Saturday -->
+        <div class="day-name">Sunday</div>   <!-- Added Sunday -->
+      </div>
+
+      <!-- Week 1 -->
+      <div class="week">
+        <div class="week-label">Week 1</div>
+        <div class="checkbox-column">
+          <input type="checkbox" id="monday-1">
+          <input type="checkbox" id="tuesday-1">
+          <input type="checkbox" id="wednesday-1">
+          <input type="checkbox" id="thursday-1">
+          <input type="checkbox" id="friday-1">
+          <input type="checkbox" id="saturday-1"> <!-- Saturday checkbox -->
+          <input type="checkbox" id="sunday-1">   <!-- Sunday checkbox -->
+        </div>
+      </div>
+
+      <!-- Week 2 -->
+      <div class="week">
+        <div class="week-label">Week 2</div>
+        <div class="checkbox-column">
+          <input type="checkbox" id="monday-2">
+          <input type="checkbox" id="tuesday-2">
+          <input type="checkbox" id="wednesday-2">
+          <input type="checkbox" id="thursday-2">
+          <input type="checkbox" id="friday-2">
+          <input type="checkbox" id="saturday-2"> <!-- Saturday checkbox -->
+          <input type="checkbox" id="sunday-2">   <!-- Sunday checkbox -->
+        </div>
+      </div>
+
+      <!-- Week 3 -->
+      <div class="week">
+        <div class="week-label">Week 3</div>
+        <div class="checkbox-column">
+          <input type="checkbox" id="monday-3">
+          <input type="checkbox" id="tuesday-3">
+          <input type="checkbox" id="wednesday-3">
+          <input type="checkbox" id="thursday-3">
+          <input type="checkbox" id="friday-3">
+          <input type="checkbox" id="saturday-3"> <!-- Saturday checkbox -->
+          <input type="checkbox" id="sunday-3">   <!-- Sunday checkbox -->
+        </div>
+      </div>
+
+      <!-- Week 4 -->
+      <div class="week">
+        <div class="week-label">Week 4</div>
+        <div class="checkbox-column">
+          <input type="checkbox" id="monday-4">
+          <input type="checkbox" id="tuesday-4">
+          <input type="checkbox" id="wednesday-4">
+          <input type="checkbox" id="thursday-4">
+          <input type="checkbox" id="friday-4">
+          <input type="checkbox" id="saturday-4"> <!-- Saturday checkbox -->
+          <input type="checkbox" id="sunday-4">   <!-- Sunday checkbox -->
+        </div>
+      </div>
+
+      <!-- Week 5 -->
+      <div class="week">
+        <div class="week-label">Week 5</div>
+        <div class="checkbox-column">
+          <input type="checkbox" id="monday-5">
+          <input type="checkbox" id="tuesday-5">
+          <input type="checkbox" id="wednesday-5">
+          <input type="checkbox" id="thursday-5">
+          <input type="checkbox" id="friday-5">
+          <input type="checkbox" id="saturday-5"> <!-- Saturday checkbox -->
+          <input type="checkbox" id="sunday-5">   <!-- Sunday checkbox -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
